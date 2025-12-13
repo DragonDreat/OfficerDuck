@@ -1,0 +1,11 @@
+blocked_sites:
+- site.com
+check_interval: 1
+log_file: ListApps.txt
+processes:
+- app.exe
+
+redirect_ip: 127.0.0.1
+shutdown_delay: 10
+total_time_seconds: 7200 ## 2 hours
+warning_before_seconds: 10
