@@ -28,13 +28,10 @@ All settings are stored in <b>settings.yml</b>.
 
 <pre>
 blocked_sites:
-- pornhub.com
 - site.com
 
 processes:
-- FortniteLauncher.exe
-- chrome.exe
-- firefox.exe
+- app.exe
 
 check_interval: 1
 log_file: ListApps.txt
