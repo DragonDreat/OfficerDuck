@@ -135,8 +135,7 @@ Native Windows startup mechanisms
 
 This project is intended for educational and personal use.
 
-🦆 OfficerDuck
-<img src="https://i.imgur.com/U6tIH5a.jpeg" alt="OfficerDuck Logo" width="200"/>
 
 OfficerDuck Parental Control
 Simple rules. Strong boundaries.
+<img src="https://i.imgur.com/U6tIH5a.jpeg" alt="OfficerDuck Logo" width="200"/>
