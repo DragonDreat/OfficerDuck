@@ -77,9 +77,7 @@ ParentalControl/
 <h2 align="center">📜 License</h2>
 
 <p align="center">
-Currently unlicensed.<br>
-All rights reserved unless stated otherwise.<br>
-License terms may be added in the future.
+MIT License<br>
 </p>
 
 <hr>
@@ -91,3 +89,4 @@ License terms may be added in the future.
 Modules and features are actively being developed.<br>
 This repository contains the source code and scripts for testing and development purposes.
 </p>
+<img src="https://i.imgur.com/U6tIH5a.jpeg" align="center">
