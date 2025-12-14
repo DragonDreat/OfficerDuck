@@ -49,13 +49,13 @@ shutdown_delay: 10
 <pre>
 OfficerDuck/
 │
-├── client.py             # Watchdog client
-├── site_blocker.py       # Hosts-based website blocking
-├── time_of_use.py        # Time limit logic & shutdown
-├── process_monitor.py    # Application monitoring
-├── installer.py          # Installer script
-├── administrator.py      # Admin GUI
-├── settings.yml          # Configuration file
+├── client.py                # Watchdog client
+├── BlockSite.py             # Hosts-based website blocking
+├── TimeOfUse.py             # Time limit logic & shutdown
+├── app_ControlSystem.py     # Application monitoring
+├── installer.py             # Installer script
+├── administrator.py         # Admin GUI
+├── settings.yml             # Configuration file
 </pre>
 
 <hr>
@@ -71,10 +71,22 @@ OfficerDuck/
 
 <hr>
 
+<h2 align="center">💻 Installation</h2>
+
+<ul>
+  <li>Run <b>installer.py</b> to start the installation process.</li>
+  <li>The installer will require <b>Administrator privileges</b> to copy files, create the ParentalControl folder, and register the client to startup.</li>
+  <li>After installation, the system may prompt you to <b>restart your computer</b> to ensure all modules run correctly.</li>
+  <li>To change settings later, search for <b>"Administrator"</b> in the Start menu and open the GUI. The application icon will be the OfficerDuck logo.</li>
+  <li>All changes to <b>settings.yml</b> will take effect immediately after saving.</li>
+</ul>
+
+<hr>
+
 <h2 align="center">📜 License</h2>
 
 <p align="center">
-MIT License<br>
+MIT License
 </p>
 
 <hr>
@@ -83,7 +95,9 @@ MIT License<br>
 
 <p align="center">
 <b>IN PROGRESS</b><br>
-Modules and features are actively being developed.<br>
-This repository contains the source code and scripts for testing and development purposes.
+Modules and features are actively being developed.
 </p>
-<img src="https://i.imgur.com/U6tIH5a.jpeg" align="center">
+
+<p align="center">
+<img src="OfficerDuck_logo.jpg" alt="OfficerDuck Logo" width="200"/>
+</p>
