@@ -99,5 +99,5 @@ Modules and features are actively being developed.
 </p>
 
 <p align="center">
-<img src="OfficerDuck_logo.jpg" alt="OfficerDuck Logo" width="200"/>
+<img src="https://i.imgur.com/oMrH6N6.jpeg" alt="OfficerDuck Logo" width="200"/>
 </p>
