@@ -47,7 +47,7 @@ shutdown_delay: 10
 <h2 align="center">🗂 Project Structure</h2>
 
 <pre>
-ParentalControl/
+OfficerDuck/
 │
 ├── client.py             # Watchdog client
 ├── site_blocker.py       # Hosts-based website blocking
