@@ -75,7 +75,6 @@ OfficerDuck/
 
 <ul>
   <li>Run <b>installer.py</b> to start the installation process.</li>
-  <li>The installer will require <b>Administrator privileges</b> to copy files, create the ParentalControl folder, and register the client to startup.</li>
   <li>After installation, the system may prompt you to <b>restart your computer</b> to ensure all modules run correctly.</li>
   <li>To change settings later, search for <b>"Administrator"</b> in the Start menu and open the GUI. The application icon will be the OfficerDuck logo.</li>
   <li>All changes to <b>settings.yml</b> will take effect immediately after saving.</li>
