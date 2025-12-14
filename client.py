@@ -6,9 +6,9 @@ import sys
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 MODULES = [
-    "modules/BlockSites.py",
-    "modules/TimeOfUse.py",
-    "modules/apps_ControlSystem.py"
+    "BlockSites.py",
+    "TimeOfUse.py",
+    "apps_ControlSystem.py"
 ]
 
 processes = {}

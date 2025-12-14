@@ -1,77 +1,56 @@
 import os
-import sys
 import shutil
-import ctypes
-import winreg
 import subprocess
 
-APP_NAME = "ParentalControl"
-MODULES = [
+APP_NAME = "OfficerDuck"
+FILES = [
     "client.exe",
-    "site_blocker.exe",
-    "time_of_use.exe",
-    "process_monitor.exe",
+    "BlockSites.exe",
+    "TimeOfUse.exe",
+    "apps_ControlSystem.exe",
     "settings.yml",
-    "administrator.exe"
+    "administrator.exe",
+    "installer.exe",
+    "OfficerDuck_Logo.ico",
+    "OfficerDuck_Logo.jpg",
+    "ListApps.txt"
 ]
 
-def is_admin():
-    try:
-        return ctypes.windll.shell32.IsUserAnAdmin()
-    except:
-        return False
-
-if not is_admin():
-    ctypes.windll.shell32.ShellExecuteW(
-        None,
-        "runas",
-        sys.executable,
-        " ".join(sys.argv),
-        None,
-        1
-    )
-    sys.exit(0)
 
 USER_DIR = os.path.expanduser("~")
 INSTALL_DIR = os.path.join(USER_DIR, APP_NAME)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ADMIN_PATH = os.path.join(INSTALL_DIR, "administrator.exe")
+STARTUP_PATH = os.path.join(USER_DIR, "AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup")
 
 os.makedirs(INSTALL_DIR, exist_ok=True)
 
-for item in MODULES:
+for item in FILES:
     src = os.path.join(BASE_DIR, item)
     dst = os.path.join(INSTALL_DIR, item)
     if os.path.exists(src):
         shutil.copy2(src, dst)
 
 def add_to_startup():
-    key = winreg.OpenKey(
-        winreg.HKEY_CURRENT_USER,
-        r"Software\Microsoft\Windows\CurrentVersion\Run",
-        0,
-        winreg.KEY_SET_VALUE
-    )
+    SOURCE = os.path.join(INSTALL_DIR, "client.exe")
+    if(os.path.exists(SOURCE)):
+        shutil.copy2(SOURCE, STARTUP_PATH)
 
-    client_path = os.path.join(INSTALL_DIR, "client.exe")
+def add_admin_to_folder():
+    ADMIN_SAVE_DIR = os.path.join(USER_DIR, "AppData\Roaming\Microsoft\Windows\Start Menu\Programs")
+    if os.path.exists(ADMIN_PATH):
+        shutil.copy2(ADMIN_PATH, ADMIN_SAVE_DIR)
 
-    winreg.SetValueEx(
-        key,
-        APP_NAME,
-        0,
-        winreg.REG_SZ,
-        f'"{client_path}"'
-    )
-
-    winreg.CloseKey(key)
+    
 
 add_to_startup()
+add_admin_to_folder()
 
-admin_path = os.path.join(INSTALL_DIR, "administrator.exe")
-if os.path.exists(admin_path):
-    subprocess.Popen(
-        admin_path,
-        cwd=INSTALL_DIR,
-        creationflags=subprocess.CREATE_NEW_CONSOLE
-    )
+if os.path.exists(ADMIN_PATH):
+  subprocess.Popen(
+     ADMIN_PATH,
+     cwd=INSTALL_DIR,
+    creationflags=subprocess.CREATE_NEW_CONSOLE
+  )
 
 print("Installation completed successfully.")
